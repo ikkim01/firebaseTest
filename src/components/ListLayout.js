@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./ListLayout.scss";
 
-const ListLayout = ({ dataBase, setParam }) => {
+const ListLayout = ({ dataBase }) => {
   const navigate = useNavigate();
 
   return (

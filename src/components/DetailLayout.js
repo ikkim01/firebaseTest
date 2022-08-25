@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { firestore } from "../api/firebase";
 import "./DetailLayout.scss";
 
@@ -6,6 +7,7 @@ const DetailLayout = ({ dataBase, param }) => {
   const { Type, Img, Genre, Name, Subtitle, Seasons } = dataBase;
   const [seriesData, setSeriesData] = useState([]);
   const [seasonsData, setSeasonsData] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setSeriesData([]);
@@ -64,6 +66,7 @@ const DetailLayout = ({ dataBase, param }) => {
             </div>
           );
         })}
+        <button onClick={() => navigate(-1)}>뒤로가기</button>
       </div>
     </div>
   );
